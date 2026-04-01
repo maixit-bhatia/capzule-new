@@ -3,6 +3,7 @@
 
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
+<<<<<<< HEAD
 
 <!-- BEGIN:tool-usage-rules -->
 
@@ -30,3 +31,5 @@ This version has breaking changes — APIs, conventions, and file structure may 
 If a tool is required and you fail to use it, the task will fail.
 
 <!-- END:tool-usage-rules -->
+=======
+>>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880

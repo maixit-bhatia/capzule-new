@@ -30,7 +30,10 @@
   /* Hide scrollbar for cleanlyness */
   -ms-overflow-style: none;
   scrollbar-width: none;
+<<<<<<< HEAD
   position: relative;
+=======
+>>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880
 }
 
 .feedContainer::-webkit-scrollbar {
@@ -39,6 +42,7 @@
 
 /* Global Player */
 .globalPlayer {
+<<<<<<< HEAD
   position: sticky;
   bottom: 24px;
   margin: 24px auto;
@@ -47,6 +51,16 @@
   background: #1e293b;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+=======
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-hover);
+>>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
@@ -82,12 +96,20 @@
 .playerTitle {
   font-size: 13px;
   font-weight: 700;
+<<<<<<< HEAD
   color: #f8fafc;
+=======
+  color: var(--text-main);
+>>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880
 }
 
 .playerSubtitle {
   font-size: 11px;
+<<<<<<< HEAD
   color: #94a3b8;
+=======
+  color: var(--text-muted);
+>>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880
 }
 
 .playerControls {
@@ -97,7 +119,11 @@
 }
 
 .playerBtn {
+<<<<<<< HEAD
   color: #94a3b8;
+=======
+  color: var(--text-muted);
+>>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880
   transition: all var(--transition-fast);
   display: flex;
   align-items: center;
@@ -108,14 +134,23 @@
 }
 
 .playerBtn:hover {
+<<<<<<< HEAD
   color: #fff;
   background: rgba(255, 255, 255, 0.1);
+=======
+  color: var(--primary-color);
+  background: var(--secondary-color);
+>>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880
 }
 
 .playerPlay {
   color: #fff;
   background: var(--primary-color);
+<<<<<<< HEAD
   box-shadow: 0 4px 12px rgba(132, 204, 22, 0.4);
+=======
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+>>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880
   width: 44px;
   height: 44px;
 }
@@ -123,7 +158,11 @@
 .playerPlay:hover {
   background: var(--primary-color-hover);
   transform: scale(1.1);
+<<<<<<< HEAD
   box-shadow: 0 8px 24px rgba(132, 204, 22, 0.5);
+=======
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.5);
+>>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880
 }
 
 .playerProgress {
@@ -135,7 +174,11 @@
 
 .playerTime {
   font-size: 11px;
+<<<<<<< HEAD
   color: #94a3b8;
+=======
+  color: var(--text-muted);
+>>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880
   font-variant-numeric: tabular-nums;
 }
 
@@ -143,7 +186,11 @@
   flex: 1;
   height: 6px;
   border-radius: 3px;
+<<<<<<< HEAD
   background: rgba(255, 255, 255, 0.1);
+=======
+  background: var(--border-color);
+>>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880
   position: relative;
   cursor: pointer;
 }

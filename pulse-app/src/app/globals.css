@@ -1,5 +1,6 @@
 :root {
   /* GenZ Cloud UI Palette (Reference Match) */
+<<<<<<< HEAD
   --primary-color: #84cc16;
   /* Lime Green */
   --primary-color-hover: #65a30d;
@@ -10,6 +11,18 @@
 
   --primary-gradient: linear-gradient(135deg, #bef264 0%, #84cc16 50%, #65a30d 100%);
   --secondary-gradient: linear-gradient(135deg, #ffffff 0%, #f7fee7 50%, #ecfccb 100%);
+=======
+  --primary-color: #6366f1;
+  /* Deep Indigo */
+  --primary-color-hover: #4f46e5;
+  --secondary-color: #e0e7ff;
+  /* Soft Periwinkle background */
+  --accent-color: #a5b4fc;
+  /* Light Indigo */
+
+  --primary-gradient: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+  --secondary-gradient: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+>>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880
 
   --bg-color: #f4f6fa;
   /* Ultra-pale cool white base */
@@ -20,6 +33,7 @@
   --text-muted: #64748b;
   --text-light: #94a3b8;
 
+<<<<<<< HEAD
   --border-color: rgba(132, 204, 22, 0.08);
   /* Very faint structural border */
   --border-highlight: rgba(132, 204, 22, 0.15);
@@ -30,6 +44,18 @@
   --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.03), 0 12px 32px rgba(132, 204, 22, 0.06);
   --shadow-hover: 0 16px 32px rgba(0, 0, 0, 0.04), 0 24px 64px rgba(132, 204, 22, 0.12);
   --shadow-active: 0 2px 8px rgba(0, 0, 0, 0.03), 0 4px 12px rgba(132, 204, 22, 0.06);
+=======
+  --border-color: rgba(99, 102, 241, 0.08);
+  /* Very faint structural border */
+  --border-highlight: rgba(99, 102, 241, 0.15);
+  --border-width: 1px;
+
+  /* Soft Distant Elevation Shadows */
+  --shadow-sm: 0 2px 8px rgba(99, 102, 241, 0.04);
+  --shadow-md: 0 8px 24px rgba(99, 102, 241, 0.08);
+  --shadow-hover: 0 16px 40px rgba(99, 102, 241, 0.12);
+  --shadow-active: 0 2px 4px rgba(99, 102, 241, 0.04);
+>>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880
 
   --radius-sm: 12px;
   --radius-md: 18px;
@@ -63,6 +89,7 @@
 
 body {
   font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+<<<<<<< HEAD
   background-color: #f4f6fa;
   background-image:
     radial-gradient(circle at 0% 0%, rgba(132, 204, 22, 0.18), transparent 50%),
@@ -70,6 +97,9 @@ body {
     radial-gradient(circle at 100% 100%, rgba(192, 132, 252, 0.15), transparent 50%),
     radial-gradient(circle at 0% 100%, rgba(251, 146, 60, 0.12), transparent 50%);
   background-attachment: fixed;
+=======
+  background-color: var(--bg-color);
+>>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880
   color: var(--text-main);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -191,11 +221,19 @@ button {
   border-radius: var(--radius-full);
   font-weight: 600;
   transition: all var(--transition-normal);
+<<<<<<< HEAD
   box-shadow: 0 4px 14px rgba(132, 204, 22, 0.39);
 }
 
 .btn-primary:hover {
   box-shadow: 0 6px 20px rgba(132, 204, 22, 0.23);
+=======
+  box-shadow: 0 4px 14px rgba(47, 128, 237, 0.39);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 6px 20px rgba(47, 128, 237, 0.23);
+>>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880
   transform: scale(1.02);
 }
 

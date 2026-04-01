@@ -33,7 +33,11 @@ export default function Sidebar() {
           <span className={styles.navText}>Wallet</span>
         </button>
         <button className={styles.navItem} aria-label="Profile/Me">
+<<<<<<< HEAD
           <div className={styles.iconWrapper}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/></svg></div>
+=======
+          <div className={styles.iconWrapper}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="5"/><path d="M3 21v-2a7 7 0 0 1 14 0v2"/></svg></div>
+>>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880
           <span className={styles.navText}>Profile</span>
         </button>
       </nav>

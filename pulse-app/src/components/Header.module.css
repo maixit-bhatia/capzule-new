@@ -3,16 +3,24 @@
   align-items: center;
   justify-content: space-between;
   padding: 12px 24px;
+<<<<<<< HEAD
   background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+=======
+  background: var(--card-bg);
+>>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880
   width: calc(100% - 64px);
   margin: 16px 32px 0 32px;
   border-radius: var(--radius-full);
   box-shadow: var(--shadow-md);
   position: relative;
   z-index: 100;
+<<<<<<< HEAD
   border: 1px solid rgba(255, 255, 255, 0.5);
+=======
+  border: 1px solid var(--border-color);
+>>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880
 }
 
 .leftSection {
