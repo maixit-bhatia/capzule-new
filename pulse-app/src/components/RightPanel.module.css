@@ -1,5 +1,4 @@
 .panel {
-<<<<<<< HEAD
   width: 380px;
   display: flex;
   flex-direction: column;
@@ -16,19 +15,6 @@
 .panel::-webkit-scrollbar {
   display: none;
 }
-=======
-  width: 320px;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  padding: 24px 0;
-  height: 100vh;
-  overflow-y: auto;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-.panel::-webkit-scrollbar { display: none; }
->>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880
 
 .section {
   display: flex;
@@ -49,10 +35,7 @@
   align-items: center;
   gap: 8px;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880
 .sectionTitle::before {
   content: '';
   display: block;
@@ -79,10 +62,7 @@
   cursor: pointer;
   transition: var(--transition-normal);
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880
 .liveRoomCard:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-sm);
@@ -112,10 +92,7 @@
 .avatars {
   display: flex;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880
 .avatars img {
   width: 24px;
   height: 24px;
@@ -123,14 +100,10 @@
   border: 2px solid var(--card-bg);
   margin-left: -8px;
 }
-<<<<<<< HEAD
 
 .avatars img:first-child {
   margin-left: 0;
 }
-=======
-.avatars img:first-child { margin-left: 0; }
->>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880
 
 .moreUsers {
   width: 24px;
@@ -172,10 +145,7 @@
   transition: var(--transition-normal);
   cursor: pointer;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880
 .tag:hover {
   background-color: var(--primary-color);
   color: white;
@@ -221,10 +191,7 @@
   font-weight: 600;
   transition: var(--transition-normal);
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880
 .followBtn:hover {
   background-color: var(--primary-color);
   color: white;
@@ -265,15 +232,8 @@
   transition: var(--transition-normal);
   width: 100%;
 }
-<<<<<<< HEAD
 
 .promoBtn:hover {
   transform: scale(1.02);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-=======
-.promoBtn:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
->>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880

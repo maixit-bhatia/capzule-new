@@ -19,18 +19,12 @@
 
 .sidebar:hover {
   width: 260px;
-<<<<<<< HEAD
   background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: var(--shadow-md);
   border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
   border-right: 1px solid rgba(255, 255, 255, 0.5);
-=======
-  background: var(--card-bg);
-  box-shadow: var(--shadow-md);
-  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
->>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880
 }
 
 .logo {
@@ -73,11 +67,7 @@
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
-<<<<<<< HEAD
   padding: 0 14px;
-=======
-  padding: 0 18px;
->>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880
   gap: 18px;
   color: var(--text-muted);
   font-weight: 600;

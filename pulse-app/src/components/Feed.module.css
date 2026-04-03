@@ -2,11 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-<<<<<<< HEAD
   max-width: 800px;
-=======
-  max-width: 600px;
->>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880
   width: 100%;
   margin: 0 auto;
   padding: 16px 0 80px 0;
@@ -17,13 +13,9 @@
   display: flex;
   gap: 12px;
   overflow-x: auto;
-<<<<<<< HEAD
   padding-top: 12px;
   margin-top: -12px;
   padding-bottom: 8px;
-=======
-  padding-bottom: 4px;
->>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880
   -ms-overflow-style: none;
   scrollbar-width: none;
 }

@@ -6,15 +6,7 @@ export default function Header() {
   const [theme, setTheme] = useState('light');
 
   useEffect(() => {
-<<<<<<< HEAD
     // User requested to keep light theme default, removing auto OS check
-=======
-    // Check initial preference
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark');
-      document.documentElement.setAttribute('data-theme', 'dark');
-    }
->>>>>>> c01a3d28b1e77a718d42b9935372847a3bb5c880
   }, []);
 
   const toggleTheme = () => {
