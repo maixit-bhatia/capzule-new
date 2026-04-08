@@ -6,7 +6,68 @@
   width: 100%;
   margin: 0 auto;
   padding: 16px 0 80px 0;
-  /* padding bottom for global player */
+}
+
+.storyViewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.storyViewerContent {
+  position: relative;
+  max-width: 400px;
+  max-height: 80vh;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.storyViewerContent img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.storyUserName {
+  position: absolute;
+  bottom: 20px;
+  left: 16px;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.storyCloseBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .stories {
@@ -323,6 +384,21 @@
   border-radius: 2px;
   background-color: var(--primary-color);
   opacity: 0.8;
+  transition: height 0.1s ease;
+}
+
+.waveBar.playing {
+  animation: waveAnimation 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes waveAnimation {
+  0% {
+    transform: scaleY(0.5);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
 }
 
 .time {
@@ -345,6 +421,95 @@
   border-top: 1px solid var(--border-color);
   padding-top: 10px;
   margin-top: -4px;
+}
+
+.audioPlayerWrapper {
+  position: relative;
+}
+
+.expanded {
+  background: linear-gradient(135deg, var(--bg-color) 0%, var(--secondary-color) 100%);
+}
+
+.expandedWaveform {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.03) 0%, rgba(0, 0, 0, 0.08) 100%);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--primary-color);
+}
+
+.expandedPlayBtn {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 8px 24px rgba(132, 204, 22, 0.4);
+  transition: all var(--transition-bounce);
+  z-index: 10;
+}
+
+.expandedPlayBtn:hover {
+  transform: scale(1.15);
+  box-shadow: 0 12px 32px rgba(132, 204, 22, 0.5);
+}
+
+.expandedBars {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2px;
+  width: 100%;
+  height: 120px;
+  padding: 0 16px;
+}
+
+.expandedBar {
+  flex: 1;
+  min-width: 8px;
+  border-radius: 3px;
+  transition: height 0.15s ease;
+}
+
+.expandedBar.playing {
+  animation: expandedWave 0.4s ease-in-out infinite alternate;
+}
+
+@keyframes expandedWave {
+  0% {
+    transform: scaleY(0.4);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.expandedProgress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.expandedProgress .progressBar {
+  flex: 1;
+  height: 8px;
+  border-radius: 4px;
+}
+
+.expandedProgress .progressFill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
 }
 
 .actionGroup {
@@ -406,4 +571,121 @@
   justify-content: center;
   color: white;
   font-size: 12px;
+}
+
+@media (max-width: 768px) {
+  .feed {
+    padding: 12px 0 100px 0;
+    gap: 12px;
+  }
+
+  .stories {
+    gap: 14px;
+    padding: 8px 0;
+    margin-top: 0;
+  }
+
+  .storyCard {
+    min-width: 56px;
+  }
+
+  .storyAvatarContainer {
+    width: 52px;
+    height: 52px;
+  }
+
+  .storyName {
+    font-size: 10px;
+  }
+
+  .createPost {
+    padding: 16px;
+    border-radius: 20px;
+    gap: 12px;
+  }
+
+  .createTop {
+    gap: 10px;
+  }
+
+  .createInput {
+    font-size: 15px;
+  }
+
+  .createActions {
+    padding-top: 12px;
+  }
+
+  .toolbarBtn {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .tabs {
+    gap: 16px;
+    margin-top: 8px;
+    overflow-x: auto;
+  }
+
+  .tab {
+    font-size: 15px;
+    padding-bottom: 10px;
+  }
+
+  .postCard {
+    padding: 16px;
+    border-radius: 20px;
+    gap: 12px;
+  }
+
+  .authorAvatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .authorNameLine {
+    font-size: 15px;
+  }
+
+  .authorMeta {
+    font-size: 11px;
+  }
+
+  .postText {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .audioPlayer {
+    padding: 10px 14px;
+    gap: 10px;
+    border-radius: 16px;
+  }
+
+  .playBtn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .playBtn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .waveform {
+    height: 20px;
+  }
+
+  .postActions {
+    padding-top: 12px;
+    margin-top: 4px;
+  }
+
+  .actionGroup {
+    gap: 20px;
+  }
+
+  .actionBtn {
+    font-size: 14px;
+  }
 }

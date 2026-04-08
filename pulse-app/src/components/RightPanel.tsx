@@ -1,8 +1,18 @@
 import styles from './RightPanel.module.css'
 
-export default function RightPanel() {
+interface RightPanelProps {
+  isOpen?: boolean
+  onClose?: () => void
+}
+
+export default function RightPanel({ isOpen, onClose }: RightPanelProps) {
   return (
-    <aside className={styles.panel}>
+    <aside className={`${styles.panel} ${isOpen ? styles.open : ''}`}>
+      {onClose && (
+        <button className={styles.closeBtn} onClick={onClose}>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      )}
       
       {/* 1. Trending Tags (Top 5) */}
       <section className={styles.section}>

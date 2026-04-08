@@ -2,7 +2,12 @@
 import { useState } from 'react';
 import styles from './FriendsPanel.module.css';
 
-export default function FriendsPanel() {
+interface FriendsPanelProps {
+  isOpen?: boolean
+  onClose?: () => void
+}
+
+export default function FriendsPanel({ isOpen, onClose }: FriendsPanelProps) {
   const [expanded, setExpanded] = useState(false);
   const [activeTab, setActiveTab] = useState('Friends');
 
@@ -24,28 +29,30 @@ export default function FriendsPanel() {
     { name: 'Jessica_09', desc: 'Wants to be friends', imgIdx: 8 }
   ];
 
-  if (!expanded) {
+  if (!expanded && isOpen === false) {
     return (
-      <div className={styles.collapsed} onClick={() => setExpanded(true)} title="Expand Friends Panel">
-        <button className={styles.expandBtn}>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
-        </button>
-        {mockUsers.filter(u => u.online).map((u, i) => (
-          <div key={u.name} className={styles.avatarDot}>
-            <img src={`https://i.pravatar.cc/150?u=10${i}`} alt={u.name} />
-            <div className={styles.onlineDot} />
-          </div>
-        ))}
+      <div className={styles.panelWrapper}>
+        <div className={styles.collapsed} onClick={() => setExpanded(true)} title="Expand Friends Panel">
+          <button className={styles.expandBtn}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          {mockUsers.filter(u => u.online).map((u, i) => (
+            <div key={u.name} className={styles.avatarDot}>
+              <img src={`https://i.pravatar.cc/150?u=10${i}`} alt={u.name} />
+              <div className={styles.onlineDot} />
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
 
   return (
-    <div className={styles.expanded}>
+    <div className={`${styles.expanded} ${styles.open}`}>
       <div className={styles.panelHeader}>
         <span className={styles.panelTitle}>Network</span>
-        <button className={styles.closeBtn} onClick={() => setExpanded(false)}>
-           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
+        <button className={styles.closeBtn} onClick={onClose || (() => setExpanded(false))}>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
         </button>
       </div>
 
@@ -76,12 +83,6 @@ export default function FriendsPanel() {
                     <span className={styles.userDesc}>{u.desc}</span>
                   </div>
                 </div>
-                
-                <div className={styles.hoverActions}>
-                  <button className={styles.actionBtn} title="Message"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></button>
-                  <button className={styles.actionBtn} title="Audio Call"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></button>
-                  <button className={styles.actionBtn} title="Video Call"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></button>
-                </div>
               </div>
             ))}
           </div>
@@ -98,12 +99,6 @@ export default function FriendsPanel() {
                     <span className={styles.userName}>{u.name}</span>
                     <span className={styles.userDesc}>{u.desc}</span>
                   </div>
-                </div>
-                
-                <div className={styles.hoverActions}>
-                  <button className={styles.actionBtn} title="Message"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></button>
-                  <button className={styles.actionBtn} title="Audio Call"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></button>
-                  <button className={styles.actionBtn} title="Video Call"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></button>
                 </div>
               </div>
             ))}
@@ -124,9 +119,6 @@ export default function FriendsPanel() {
                   <span className={styles.userName}>{u.name}</span>
                   <span className={styles.userDesc} style={{color: u.desc.includes('Missed') ? '#ef4444' : 'var(--text-muted)'}}>{u.desc}</span>
                 </div>
-              </div>
-              <div className={styles.hoverActions}>
-                <button className={styles.actionBtn} title="Call Back"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></button>
               </div>
             </div>
           ))}
@@ -155,7 +147,6 @@ export default function FriendsPanel() {
           ))}
         </div>
       )}
-
     </div>
   )
 }

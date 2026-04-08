@@ -16,10 +16,46 @@
   display: none;
 }
 
+@media (max-width: 768px) {
+  .panel {
+    width: 100%;
+    max-width: none;
+    border-radius: 0;
+    padding: 20px;
+  }
+
+  /* Mobile Dark Mode */
+  [data-theme="dark"] .panel {
+    background: #1e293b;
+  }
+
+  [data-theme="dark"] .sectionTitle,
+  [data-theme="dark"] .roomTitle,
+  [data-theme="dark"] .userName {
+    color: #f1f5f9;
+  }
+
+  [data-theme="dark"] .tag {
+    background: #334155;
+    color: #94a3b8;
+  }
+
+  [data-theme="dark"] .followBtn {
+    background: #84cc16;
+    color: #fff;
+  }
+}
+
 .section {
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+@media (min-width: 769px) {
+  .closeBtn {
+    display: none;
+  }
 }
 
 .sectionHeader {
@@ -236,4 +272,96 @@
 .promoBtn:hover {
   transform: scale(1.02);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .panel {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 85%;
+    max-width: 340px;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    transform: translateX(100%);
+    z-index: 450;
+    box-shadow: -8px 0 32px rgba(0, 0, 0, 0.12);
+    border-radius: 24px 0 0 24px;
+    padding: 20px;
+    gap: 20px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .panel.open {
+    transform: translateX(0);
+  }
+
+  .closeBtn {
+    display: flex;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    background: #f1f5f9;
+    transition: all 0.2s ease;
+  }
+
+  .closeBtn:hover {
+    background: #e2e8f0;
+    color: #1e293b;
+  }
+
+  .section {
+    gap: 12px;
+  }
+
+  .sectionTitle {
+    font-size: 15px;
+  }
+
+  .liveRoomCard {
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .roomTitle {
+    font-size: 15px;
+  }
+
+  .tag {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .suggestedUser {
+    padding: 10px 0;
+  }
+
+  .userAvatar {
+    width: 44px;
+    height: 44px;
+  }
+
+  .userName {
+    font-size: 15px;
+  }
+
+  .followBtn {
+    padding: 8px 18px;
+    font-size: 13px;
+  }
+
+  .promoCard {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .promoTitle {
+    font-size: 18px;
+  }
 }
